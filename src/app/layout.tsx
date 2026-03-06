@@ -21,7 +21,12 @@ export const metadata: Metadata = {
   description: "Faris Alkrenawi — Software Engineer & AI Specialist. Building production-grade AI systems, mobile apps, and web platforms for healthcare, fintech, and beyond.",
   keywords: ["software engineer", "AI specialist", "machine learning", "flutter developer", "web development", "Israel"],
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", sizes: "any" },
+      { url: "/favicon.svg", sizes: "32x32", type: "image/svg+xml" },
+      { url: "/favicon.svg", sizes: "16x16", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
   },
 };
 
