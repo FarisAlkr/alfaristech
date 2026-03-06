@@ -36,8 +36,8 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-deep/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-white shadow-lg"
+          : "bg-white"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
@@ -58,7 +58,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-cream/80 hover:text-gold text-sm font-medium tracking-wide transition-colors duration-300"
+              className="text-navy-deep hover:text-gold text-sm font-medium tracking-wide transition-colors duration-300"
             >
               {link.label}
             </button>
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-cream"
+          className="md:hidden text-navy-deep"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -87,14 +87,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-navy-deep/98 backdrop-blur-md border-t border-gold/10"
+            className="md:hidden bg-white border-t border-gold/20"
           >
             <div className="flex flex-col px-6 py-4 gap-3">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-cream/80 hover:text-gold text-left py-2 text-lg font-medium transition-colors"
+                  className="text-navy-deep hover:text-gold text-left py-2 text-lg font-medium transition-colors"
                 >
                   {link.label}
                 </button>
