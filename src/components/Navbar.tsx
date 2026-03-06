@@ -47,7 +47,7 @@ export default function Navbar() {
             alt="AlfarisTech"
             width={560}
             height={160}
-            className="h-20 sm:h-24 w-auto drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] brightness-110 contrast-110 transition-all duration-300 group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.8)] group-hover:scale-105"
+            className="h-20 sm:h-24 w-auto drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] brightness-[2] invert transition-all duration-300 group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.8)] group-hover:scale-105"
             priority
           />
         </a>
