@@ -62,8 +62,9 @@
 
   <!-- Text -->
   <g transform="translate(105, 38)">
+    <!-- Alfaris with golden frame -->
     <text font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="38" dominant-baseline="middle">
-      <tspan fill="url(#cream-gradient)">Alfaris</tspan><tspan fill="url(#gold-gradient)">Tech</tspan>
+      <tspan fill="url(#cream-gradient)" stroke="url(#gold-gradient)" stroke-width="1" paint-order="stroke fill">Alfaris</tspan><tspan fill="url(#gold-gradient)">Tech</tspan>
     </text>
     <text x="2" y="28" font-family="Arial, sans-serif" font-size="11" fill="url(#gold-gradient)" letter-spacing="0.5">AI, Dev &amp; Education Solutions</text>
   </g>
