@@ -42,16 +42,14 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
         <a href="#" className="flex items-center group">
-          <div className="bg-gradient-to-r from-white/90 via-cream/80 to-white/90 rounded-lg px-4 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:shadow-gold-glow group-hover:scale-105">
-            <Image
-              src="/logo.png"
-              alt="AlfarisTech"
-              width={560}
-              height={160}
-              className="h-16 sm:h-20 w-auto"
-              priority
-            />
-          </div>
+          <Image
+            src="/logo.png"
+            alt="AlfarisTech"
+            width={560}
+            height={160}
+            className="h-24 sm:h-32 w-auto transition-all duration-300 group-hover:scale-105"
+            priority
+          />
         </a>
 
         {/* Desktop */}
