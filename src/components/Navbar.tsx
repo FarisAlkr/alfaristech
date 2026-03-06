@@ -34,10 +34,8 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white shadow-lg"
-          : "bg-white"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-gold-gradient ${
+        scrolled ? "shadow-lg" : ""
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-1 sm:py-2">
@@ -65,7 +63,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => handleClick("#contact")}
-            className="bg-gold-gradient text-primary font-semibold text-sm px-5 py-2.5 rounded-md hover:-translate-y-0.5 hover:shadow-gold-glow transition-all duration-300"
+            className="bg-navy-deep text-gold font-semibold text-sm px-5 py-2.5 rounded-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
           >
             Contact
           </button>
@@ -87,7 +85,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gold/20"
+            className="md:hidden bg-gold-gradient border-t border-primary/10"
           >
             <div className="flex flex-col px-6 py-4 gap-3">
               {navLinks.map((link) => (
