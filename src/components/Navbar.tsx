@@ -40,8 +40,6 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* Golden gradient line at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold-gradient shadow-[0_2px_10px_rgba(212,175,55,0.5)]" />
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-1 sm:py-2">
         <a href="#" className="flex items-center group">
           <Image
