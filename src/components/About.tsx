@@ -56,7 +56,7 @@ export default function About() {
             className="space-y-5"
           >
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              I'm a Computer Science student at Ben-Gurion University with a background in Mathematics from the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact — from clinical decision support systems deployed in hospitals to mobile apps with hundreds of users.
+              I'm a Computer Science student at Ben-Gurion University with a background in Mathematics from the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
               Certified in AI by The;Institute (with BGU, NVIDIA & Microsoft), I specialize in LLMs, RAG architectures, and ML models. I also bring over 4 years of experience tutoring 200+ students, which gives me a unique ability to translate complex technology into clear, actionable solutions.
