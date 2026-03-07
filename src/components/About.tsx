@@ -14,6 +14,7 @@ const highlights = [
     icon: Trophy,
     title: "Hackathon Winner",
     desc: "OncoRisk EC — Medical AI",
+    link: "https://www.linkedin.com/posts/faris-alkrenawi_healthtech-ai-machinelearning-activity-7417580302157570048-xC7k",
   },
   {
     icon: Award,
