@@ -43,11 +43,11 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-1 sm:py-2">
         <a href="#" className="flex items-center group">
           <Image
-            src="/logo-main.svg"
+            src="/tranparentLogowhite.png"
             alt="AlfarisTech"
             width={560}
             height={160}
-            className="h-20 sm:h-24 w-auto transition-all duration-300 group-hover:scale-105"
+            className="h-16 sm:h-20 w-auto transition-all duration-300 group-hover:scale-105"
             priority
           />
         </a>
