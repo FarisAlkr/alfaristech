@@ -18,7 +18,8 @@ const highlights = [
   {
     icon: Award,
     title: "NVIDIA & Microsoft",
-    desc: "AI Certified Developer",
+    desc: "AI Certified — The;Institution",
+    link: "https://www.linkedin.com/posts/faris-alkrenawi_ai-will-not-replace-usbut-those-who-understand-activity-7398410319217418241-vUan",
   },
   {
     icon: Globe,
@@ -62,19 +63,41 @@ export default function About() {
           </motion.div>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            {highlights.map((h, i) => (
-              <motion.div
-                key={h.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                className="bg-card rounded-xl p-4 sm:p-6 border border-border hover:-translate-y-1 hover:shadow-lg hover:border-gold/30 transition-all duration-300"
-              >
-                <h.icon className="text-gold mb-2 sm:mb-3" size={24} />
-                <h3 className="font-display font-bold text-primary text-sm sm:text-lg leading-tight">{h.title}</h3>
-                <p className="text-muted-foreground text-xs sm:text-sm mt-1">{h.desc}</p>
-              </motion.div>
-            ))}
+            {highlights.map((h, i) => {
+              const content = (
+                <>
+                  <h.icon className="text-gold mb-2 sm:mb-3" size={24} />
+                  <h3 className="font-display font-bold text-primary text-sm sm:text-lg leading-tight">{h.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm mt-1">{h.desc}</p>
+                </>
+              );
+              const className = "bg-card rounded-xl p-4 sm:p-6 border border-border hover:-translate-y-1 hover:shadow-lg hover:border-gold/30 transition-all duration-300";
+
+              return h.link ? (
+                <motion.a
+                  key={h.title}
+                  href={h.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  className={`${className} cursor-pointer block`}
+                >
+                  {content}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={h.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  className={className}
+                >
+                  {content}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
