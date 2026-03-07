@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const floatingTags = [
   { label: "AI/ML", top: "15%", left: "65%", delay: 0 },
@@ -123,15 +124,26 @@ export default function Hero() {
               </motion.div>
             ))}
 
-            {/* Geometric decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64">
-              <div className="w-full h-full border border-gold/20 rounded-full animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-4 border border-gold/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-              <div className="absolute inset-12 border border-gold/15 rounded-full animate-[spin_25s_linear_infinite]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-gold/60 animate-pulse" />
+            {/* Profile photo with decorative rings */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72"
+            >
+              <div className="absolute -inset-4 border border-gold/20 rounded-full animate-[spin_20s_linear_infinite]" />
+              <div className="absolute -inset-8 border border-gold/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+              <div className="absolute -inset-12 border border-gold/15 rounded-full animate-[spin_25s_linear_infinite]" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-gold/30 shadow-2xl">
+                <Image
+                  src="/profile.jpg"
+                  alt="Faris Alkrenawi"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
