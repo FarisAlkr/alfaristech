@@ -26,7 +26,7 @@ const projects = [
     color: "from-violet-500/20 to-blue-500/20",
     emoji: "🎉",
     url: "https://nawaqeet.com/",
-    image: null,
+    image: "/nawaqeet-screenshot.png",
   },
   {
     title: "NetoBox — Invoice Management System",
