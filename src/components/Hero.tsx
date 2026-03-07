@@ -64,7 +64,7 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
               className="text-cream/70 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              I'm Faris Alkrenawi — I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, and beyond.
+              I'm <span className="text-gold-gradient font-semibold">Faris Alkrenawi</span> — I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, and beyond.
             </motion.p>
 
             <motion.div
