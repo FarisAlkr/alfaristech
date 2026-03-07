@@ -3,54 +3,35 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Brain, Smartphone, Globe, School, Cog, Wrench } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const services = [
-  {
-    icon: Brain,
-    title: "AI & Machine Learning",
-    desc: "Custom ML models, RAG systems, and LLM integrations for intelligent decision-making. From clinical prediction to financial analysis.",
-    tags: ["XGBoost", "LangChain", "FAISS", "SHAP", "RAG"],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    desc: "Cross-platform iOS & Android apps built with Flutter and Firebase. From concept to App Store deployment with real-time backends.",
-    tags: ["Flutter", "Firebase", "iOS", "Android"],
-  },
-  {
-    icon: Globe,
-    title: "Web Applications",
-    desc: "Full-stack web development with modern frameworks. Responsive, performant, and scalable platforms tailored to your business needs.",
-    tags: ["Next.js", "FastAPI", "Python", "Docker"],
-  },
-  {
-    icon: School,
-    title: "Tech Education",
-    desc: "University-level tutoring in mathematics, physics, and computer science. Complex concepts explained clearly, with 200+ students trained.",
-    tags: ["Mathematics", "Physics", "CS Fundamentals"],
-  },
-  {
-    icon: Cog,
-    title: "AI Consulting",
-    desc: "Strategic guidance on integrating AI into your workflows. Prompt engineering, agent architectures, and vector embedding strategies.",
-    tags: ["Prompt Engineering", "MCP", "Agents"],
-  },
-  {
-    icon: Wrench,
-    title: "DevOps & Cloud",
-    desc: "Containerized deployments, CI/CD pipelines, and cloud infrastructure. Ensuring your applications are reliable, scalable, and production-ready.",
-    tags: ["Docker", "AWS", "GitHub Actions", "Linux"],
-  },
+const serviceIcons = [Brain, Smartphone, Globe, School, Cog, Wrench];
+const serviceKeys = ["ai", "mobile", "web", "education", "consulting", "devops"];
+const serviceTags = [
+  ["XGBoost", "LangChain", "FAISS", "SHAP", "RAG"],
+  ["Flutter", "Firebase", "iOS", "Android"],
+  ["Next.js", "FastAPI", "Python", "Docker"],
+  ["Mathematics", "Physics", "CS Fundamentals"],
+  ["Prompt Engineering", "MCP", "Agents"],
+  ["Docker", "AWS", "GitHub Actions", "Linux"],
 ];
 
 export default function Services() {
+  const t = useTranslations("services");
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const services = serviceKeys.map((key, i) => ({
+    icon: serviceIcons[i],
+    title: t(`items.${key}.title`),
+    desc: t(`items.${key}.desc`),
+    tags: serviceTags[i],
+  }));
 
   return (
     <section id="services" className="py-16 sm:py-24 bg-navy-deep relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 dot-pattern opacity-20" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full" />
+      <div className="absolute top-0 end-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -58,16 +39,16 @@ export default function Services() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-gold text-sm font-semibold tracking-widest uppercase">What I Do</span>
+          <span className="text-gold text-sm font-semibold tracking-widest uppercase">{t("label")}</span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-12 text-cream">
-            Services & Expertise
+            {t("title")}
           </h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((s, i) => (
             <motion.div
-              key={s.title}
+              key={i}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
@@ -80,7 +61,7 @@ export default function Services() {
                 {s.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2 sm:px-3 py-1 rounded-full bg-gold/10 text-gold/80 border border-gold/20"
+                    className="text-xs px-2 sm:px-3 py-1 rounded-full bg-gold/10 text-gold/80 border border-gold/20 preserve-ltr"
                   >
                     {tag}
                   </span>

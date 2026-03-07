@@ -4,18 +4,21 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-];
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t("about"), href: "#about" },
+    { label: t("services"), href: "#services" },
+    { label: t("portfolio"), href: "#portfolio" },
+    { label: t("testimonials"), href: "#testimonials" },
+    { label: t("contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -34,7 +37,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-navy-deep/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -67,17 +70,21 @@ export default function Navbar() {
             onClick={() => handleClick("#contact")}
             className="bg-gold-gradient text-primary font-semibold text-sm px-5 py-2.5 rounded-md hover:-translate-y-0.5 hover:shadow-gold-glow transition-all duration-300"
           >
-            Contact
+            {t("contact")}
           </button>
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-cream"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-cream"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -94,7 +101,7 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-cream/80 hover:text-gold text-left py-2 text-lg font-medium transition-colors"
+                  className="text-cream/80 hover:text-gold py-2 text-lg font-medium transition-colors"
                 >
                   {link.label}
                 </button>

@@ -3,35 +3,37 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { GraduationCap, Trophy, Award, Globe } from "lucide-react";
-
-const highlights = [
-  {
-    icon: GraduationCap,
-    title: "BGU Computer Science",
-    desc: "B.Sc. + Technion Mathematics",
-  },
-  {
-    icon: Trophy,
-    title: "Hackathon Winner",
-    desc: "OncoRisk EC — Medical AI",
-    link: "https://www.linkedin.com/posts/faris-alkrenawi_healthtech-ai-machinelearning-activity-7417580302157570048-xC7k",
-  },
-  {
-    icon: Award,
-    title: "NVIDIA & Microsoft",
-    desc: "AI Certified — The;Institution",
-    link: "https://www.linkedin.com/posts/faris-alkrenawi_ai-will-not-replace-usbut-those-who-understand-activity-7398410319217418241-vUan",
-  },
-  {
-    icon: Globe,
-    title: "Trilingual",
-    desc: "Arabic, Hebrew, English",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function About() {
+  const t = useTranslations("about");
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const highlights = [
+    {
+      icon: GraduationCap,
+      title: t("highlights.bgu.title"),
+      desc: t("highlights.bgu.desc"),
+    },
+    {
+      icon: Trophy,
+      title: t("highlights.hackathon.title"),
+      desc: t("highlights.hackathon.desc"),
+      link: "https://www.linkedin.com/posts/faris-alkrenawi_healthtech-ai-machinelearning-activity-7417580302157570048-xC7k",
+    },
+    {
+      icon: Award,
+      title: t("highlights.nvidia.title"),
+      desc: t("highlights.nvidia.desc"),
+      link: "https://www.linkedin.com/posts/faris-alkrenawi_ai-will-not-replace-usbut-those-who-understand-activity-7398410319217418241-vUan",
+    },
+    {
+      icon: Globe,
+      title: t("highlights.trilingual.title"),
+      desc: t("highlights.trilingual.desc"),
+    },
+  ];
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-cream" ref={ref}>
@@ -41,10 +43,10 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-gold text-sm font-semibold tracking-widest uppercase">About Me</span>
+          <span className="text-gold text-sm font-semibold tracking-widest uppercase">{t("label")}</span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-8 text-primary">
-            Building Intelligent Software That Makes a{" "}
-            <span className="text-gold-gradient">Difference</span>
+            {t("title")}{" "}
+            <span className="text-gold-gradient">{t("titleHighlight")}</span>
           </h2>
         </motion.div>
 
@@ -56,10 +58,10 @@ export default function About() {
             className="space-y-5"
           >
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              I'm a Computer Science student at Ben-Gurion University with a background in Mathematics from the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact.
+              {t("p1")}
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              Certified in AI by The;Institute (with BGU, NVIDIA & Microsoft), I specialize in LLMs, RAG architectures, and ML models. I also bring over 4 years of experience tutoring 200+ students, which gives me a unique ability to translate complex technology into clear, actionable solutions.
+              {t("p2")}
             </p>
           </motion.div>
 

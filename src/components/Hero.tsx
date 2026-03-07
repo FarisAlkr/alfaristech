@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 
 const floatingTags = [
   { label: "AI/ML", top: "15%", left: "65%", delay: 0 },
@@ -14,13 +15,17 @@ const floatingTags = [
   { label: "Docker", top: "70%", left: "72%", delay: 0.3 },
 ];
 
-const stats = [
-  { value: "10+", label: "Projects Delivered" },
-  { value: "200+", label: "Students Tutored" },
-  { value: "3", label: "Languages Fluent" },
-];
-
 export default function Hero() {
+  const t = useTranslations("hero");
+  const locale = useLocale();
+  const isRtl = locale === "ar" || locale === "he";
+
+  const stats = [
+    { value: "10+", label: t("stats.projects") },
+    { value: "200+", label: t("stats.students") },
+    { value: "3", label: t("stats.languages") },
+  ];
+
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -31,13 +36,13 @@ export default function Hero() {
       <div className="absolute inset-0 dot-pattern opacity-40" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold/5 blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-navy-light/30 blur-[100px]" />
+      <div className="absolute top-1/4 start-1/4 w-96 h-96 rounded-full bg-gold/5 blur-[120px]" />
+      <div className="absolute bottom-1/4 end-1/4 w-80 h-80 rounded-full bg-navy-light/30 blur-[100px]" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
-          <div>
+          <div className={isRtl ? "lg:order-2" : ""}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -45,7 +50,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span className="text-gold text-sm font-medium tracking-wide">Available for Projects</span>
+              <span className="text-gold text-sm font-medium tracking-wide">{t("available")}</span>
             </motion.div>
 
             <motion.h1
@@ -54,9 +59,9 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
             >
-              <span className="text-cream">Software Engineer &</span>
+              <span className="text-cream">{t("title1")}</span>
               <br />
-              <span className="text-gold-gradient">AI Specialist</span>
+              <span className="text-gold-gradient">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
@@ -65,7 +70,7 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
               className="text-cream/70 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              I'm <span className="text-gold-gradient font-semibold">Faris Alkrenawi</span> — I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, and beyond.
+              {t("intro")} <span className="text-gold-gradient font-semibold">{t("name")}</span> — {t("description")}
             </motion.p>
 
             <motion.div
@@ -78,13 +83,13 @@ export default function Hero() {
                 onClick={() => scrollTo("#contact")}
                 className="bg-gold-gradient text-primary font-semibold px-5 sm:px-7 py-3 sm:py-3.5 rounded-md hover:-translate-y-1 hover:shadow-gold-glow transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
               >
-                Start a Project <ArrowRight size={18} />
+                {t("cta")} <ArrowRight size={18} className={isRtl ? "rotate-180" : ""} />
               </button>
               <button
                 onClick={() => scrollTo("#portfolio")}
                 className="border border-cream/20 text-cream font-medium px-5 sm:px-7 py-3 sm:py-3.5 rounded-md hover:border-gold/50 hover:text-gold hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base"
               >
-                View My Work
+                {t("viewWork")}
               </button>
             </motion.div>
 
@@ -105,18 +110,18 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — floating tags */}
-          <div className="relative hidden lg:block h-[500px]">
+          {/* Right — floating tags and profile */}
+          <div className={`relative hidden lg:block h-[500px] ${isRtl ? "lg:order-1" : ""}`}>
             {floatingTags.map((tag) => (
               <motion.div
                 key={tag.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1 + tag.delay, duration: 0.5 }}
-                className="absolute glass-dark px-4 py-2 rounded-lg text-cream/90 text-sm font-medium"
+                className="absolute glass-dark px-4 py-2 rounded-lg text-cream/90 text-sm font-medium preserve-ltr"
                 style={{
                   top: tag.top,
-                  left: tag.left,
+                  [isRtl ? "right" : "left"]: tag.left,
                   animation: `float ${3 + tag.delay}s ease-in-out ${tag.delay}s infinite`,
                 }}
               >

@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "AlfarisTech — AI, Dev & Education Solutions",
+    "description": "Faris Alkrenawi — Software Engineer & AI Specialist. Building production-grade AI systems, mobile apps, and web platforms for healthcare, fintech, and beyond."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for Projects",
+    "title1": "Software Engineer &",
+    "title2": "AI Specialist",
+    "intro": "I'm",
+    "name": "Faris Alkrenawi",
+    "description": "I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, and beyond.",
+    "cta": "Start a Project",
+    "viewWork": "View My Work",
+    "stats": {
+      "projects": "Projects Delivered",
+      "students": "Students Tutored",
+      "languages": "Languages Fluent"
+    }
+  },
+  "about": {
+    "label": "About Me",
+    "title": "Building Intelligent Software That Makes a",
+    "titleHighlight": "Difference",
+    "p1": "I'm a Computer Science student at Ben-Gurion University with a background in Mathematics from the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact.",
+    "p2": "Certified in AI by The;Institute (with BGU, NVIDIA & Microsoft), I specialize in LLMs, RAG architectures, and ML models. I also bring over 4 years of experience tutoring 200+ students, which gives me a unique ability to translate complex technology into clear, actionable solutions.",
+    "highlights": {
+      "bgu": {
+        "title": "BGU Computer Science",
+        "desc": "B.Sc. + Technion Mathematics"
+      },
+      "hackathon": {
+        "title": "Hackathon Winner",
+        "desc": "OncoRisk EC — Medical AI"
+      },
+      "nvidia": {
+        "title": "NVIDIA & Microsoft",
+        "desc": "AI Certified — The;Institution"
+      },
+      "trilingual": {
+        "title": "Trilingual",
+        "desc": "Arabic, Hebrew, English"
+      }
+    }
+  },
+  "services": {
+    "label": "What I Do",
+    "title": "Services & Expertise",
+    "items": {
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Custom ML models, RAG systems, and LLM integrations for intelligent decision-making. From clinical prediction to financial analysis."
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "desc": "Cross-platform iOS & Android apps built with Flutter and Firebase. From concept to App Store deployment with real-time backends."
+      },
+      "web": {
+        "title": "Web Applications",
+        "desc": "Full-stack web development with modern frameworks. Responsive, performant, and scalable platforms tailored to your business needs."
+      },
+      "education": {
+        "title": "Tech Education",
+        "desc": "University-level tutoring in mathematics, physics, and computer science. Complex concepts explained clearly, with 200+ students trained."
+      },
+      "consulting": {
+        "title": "AI Consulting",
+        "desc": "Strategic guidance on integrating AI into your workflows. Prompt engineering, agent architectures, and vector embedding strategies."
+      },
+      "devops": {
+        "title": "DevOps & Cloud",
+        "desc": "Containerized deployments, CI/CD pipelines, and cloud infrastructure. Ensuring your applications are reliable, scalable, and production-ready."
+      }
+    }
+  },
+  "portfolio": {
+    "label": "My Work",
+    "title": "Featured Projects",
+    "hoverPreview": "Hover to preview live site",
+    "seeMore": "See More Projects",
+    "showLess": "Show Less",
+    "projects": {
+      "oncorisk": {
+        "title": "OncoRisk EC — Clinical Decision Support",
+        "category": "AI / Healthcare",
+        "badge": "Award Winner",
+        "desc": "Production system for Soroka Medical Center predicting endometrial cancer risk. Won hackathon award as sole developer, collaborating with physicians and approved by the medical board for real-world deployment."
+      },
+      "nawaqeet": {
+        "title": "Nawaqeet — Event Management Platform",
+        "category": "Mobile App",
+        "badge": "Published",
+        "desc": "Full-featured event management platform published on iOS & Android, achieving hundreds of downloads in its first hours. Manages transactions, event announcements, and vendor directories."
+      },
+      "netobox": {
+        "title": "NetoBox — Invoice Management System",
+        "category": "Mobile App / Fintech",
+        "desc": "Smart invoice management with live Israeli tax calculations and automated receipt generation. Streamlines financial workflows for freelancers and businesses."
+      },
+      "rag": {
+        "title": "Financial Hybrid RAG System",
+        "category": "AI / Fintech",
+        "desc": "Intelligent retrieval system combining semantic and keyword-based search for financial data analysis. Uses vector embeddings and FAISS for rapid, context-aware results."
+      },
+      "carnotify": {
+        "title": "CarNotify — Driver Alert System",
+        "category": "Mobile App / Safety",
+        "desc": "Vehicle monitoring app for critical safety alerts — lights on, door open, and child detection. Designed to prevent accidents and currently pending regulatory approval."
+      }
+    }
+  },
+  "testimonials": {
+    "label": "Client Feedback",
+    "title": "What People Say",
+    "items": {
+      "client1": {
+        "quote": "Faris delivered our website on time and beyond expectations. His ability to understand our business needs and translate them into a clean, professional design was remarkable.",
+        "author": "Client",
+        "role": "Architecture Firm",
+        "project": "Web Development Project"
+      },
+      "client2": {
+        "quote": "The Nawaqeet app transformed how our community manages events. Hundreds of downloads on launch day speaks for itself. Faris's technical skills and attention to detail are exceptional.",
+        "author": "Community Event Organizer",
+        "role": "",
+        "project": "Mobile App Project"
+      },
+      "client3": {
+        "quote": "As a physics student, I struggled for months. Faris explained concepts in a way that finally clicked. I went from barely passing to scoring in the top of my class.",
+        "author": "University Student",
+        "role": "",
+        "project": "Physics Tutoring"
+      }
+    }
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Let's Build Something Great",
+    "subtitle": "Ready to bring your idea to life?",
+    "description": "Whether you need an AI-powered system, a mobile app, a professional website, or technical education — I'd love to hear about your project.",
+    "methods": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "service": "Service Needed",
+      "servicePlaceholder": "Select a service",
+      "services": {
+        "ai": "AI & Machine Learning",
+        "mobile": "Mobile Development",
+        "web": "Web Applications",
+        "education": "Tech Education",
+        "consulting": "AI Consulting",
+        "devops": "DevOps & Cloud",
+        "other": "Other"
+      },
+      "details": "Project Details",
+      "detailsPlaceholder": "Tell me about your project...",
+      "submit": "Send Message",
+      "success": {
+        "title": "Message Sent!",
+        "message": "Thank you for reaching out. I'll get back to you soon."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 AlfarisTech. All rights reserved."
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "he": "עברית"
+  }
+}
