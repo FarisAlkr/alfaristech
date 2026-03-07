@@ -7,10 +7,10 @@ import { useState, useRef, useEffect } from "react";
 import { Globe, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const languageNames: Record<Locale, { native: string; flag: string }> = {
-  en: { native: "English", flag: "🇺🇸" },
-  ar: { native: "العربية", flag: "🇸🇦" },
-  he: { native: "עברית", flag: "🇮🇱" },
+const languageNames: Record<Locale, string> = {
+  en: "EN",
+  ar: "ع",
+  he: "עב",
 };
 
 export default function LanguageSwitcher() {
@@ -45,7 +45,7 @@ export default function LanguageSwitcher() {
         aria-label="Select language"
       >
         <Globe size={16} className="text-gold" />
-        <span className="text-sm font-medium">{languageNames[locale].flag}</span>
+        <span className="text-sm font-medium">{languageNames[locale]}</span>
         <ChevronDown
           size={14}
           className={`text-cream/60 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -65,14 +65,13 @@ export default function LanguageSwitcher() {
               <button
                 key={loc}
                 onClick={() => handleLocaleChange(loc)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-start transition-colors duration-200 ${
+                className={`w-full flex items-center justify-center px-4 py-3 text-center transition-colors duration-200 ${
                   locale === loc
                     ? "bg-gold/20 text-gold"
                     : "text-cream/80 hover:bg-gold/10 hover:text-cream"
                 }`}
               >
-                <span className="text-lg">{languageNames[loc].flag}</span>
-                <span className="text-sm font-medium">{languageNames[loc].native}</span>
+                <span className="text-sm font-medium">{loc === "en" ? "English" : loc === "ar" ? "العربية" : "עברית"}</span>
               </button>
             ))}
           </motion.div>
