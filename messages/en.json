@@ -111,7 +111,7 @@
   "portfolio": {
     "label": "My Work",
     "title": "Featured Projects",
-    "hoverPreview": "Hover to preview live site",
+    "hoverPreview": "Hover & scroll to preview",
     "seeMore": "See More Projects",
     "showLess": "Show Less",
     "projects": {
@@ -126,6 +126,12 @@
         "category": "Mobile App",
         "badge": "1K+ Users",
         "desc": "Event management platform published on iOS & Android, reaching 1,000+ active users. Manages transaction records (community gift tracking), wedding announcements, and a vendor directory of photographers, venues, and catering."
+      },
+      "iram366": {
+        "title": "Iram 366 News — Regional News Platform",
+        "category": "Web Platform / Media",
+        "badge": "Live",
+        "desc": "Independent Arabic-language news platform serving the Negev region. Built on Next.js with optimized images, RTL-first layout, category routing, a breaking-news ticker, and integrated social channels — WhatsApp, Instagram, TikTok, Telegram, Facebook, and YouTube."
       },
       "netobox": {
         "title": "NetoBox — Invoice Management System",

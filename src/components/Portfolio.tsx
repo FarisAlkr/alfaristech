@@ -6,7 +6,7 @@ import { Star, ExternalLink, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 
-const projectKeys = ["oncorisk", "nawaqeet", "netobox", "engineer", "rag", "lae", "dj", "carnotify"];
+const projectKeys = ["oncorisk", "nawaqeet", "iram366", "netobox", "engineer", "rag", "lae", "dj", "carnotify"];
 const projectData = [
   {
     tech: ["Python", "FastAPI", "Next.js 14", "XGBoost", "SHAP", "Docker"],
@@ -22,6 +22,14 @@ const projectData = [
     emoji: "🎉",
     url: "https://nawaqeet.com/",
     image: "/nawaqeet-screenshot.png",
+    hasBadge: true,
+  },
+  {
+    tech: ["Next.js", "RTL", "Image Optimization", "Responsive"],
+    color: "from-emerald-500/20 to-cyan-500/20",
+    emoji: "📰",
+    url: "https://iram366news.com/",
+    image: null,
     hasBadge: true,
   },
   {
@@ -124,7 +132,8 @@ function ProjectCard({
       <div className={`grid md:grid-cols-2 ${isRtl ? "md:grid-flow-dense" : ""}`}>
         {/* Live Preview / Image Section */}
         <div
-          className={`bg-gradient-to-br ${project.color} relative flex items-center justify-center min-h-[220px] sm:min-h-[280px] overflow-hidden ${isRtl ? "md:col-start-2" : ""}`}
+          className={`bg-gradient-to-br ${project.color} relative flex items-center justify-center min-h-[260px] sm:min-h-[380px] overflow-hidden ${isRtl ? "md:col-start-2" : ""}`}
+          onClick={project.iframeable !== false && isHovered ? (e) => e.preventDefault() : undefined}
         >
           {project.url ? (
             <>
@@ -132,27 +141,21 @@ function ProjectCard({
               {project.iframeable !== false && (
                 <div
                   className={`absolute inset-0 transition-opacity duration-300 ${
-                    isHovered ? "opacity-100" : "opacity-0"
+                    isHovered ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                   }`}
                 >
                   <iframe
                     src={project.url}
-                    className="w-full h-full border-0 pointer-events-auto"
-                    style={{
-                      transform: "scale(0.5)",
-                      transformOrigin: "top left",
-                      width: "200%",
-                      height: "200%",
-                    }}
+                    className="w-full h-full border-0 bg-white"
                     title={project.title}
                     loading="lazy"
                   />
                 </div>
               )}
-              {/* Static image fallback */}
+              {/* Static image fallback — pointer-events-none when faded so iframe receives wheel/click */}
               <div
                 className={`absolute inset-0 transition-opacity duration-300 ${
-                  project.iframeable !== false && isHovered ? "opacity-0" : "opacity-100"
+                  project.iframeable !== false && isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
               >
                 {project.image ? (
@@ -171,7 +174,7 @@ function ProjectCard({
               {/* Hover hint (only when a live iframe preview is actually available) */}
               {project.iframeable !== false && (
                 <div
-                  className={`absolute bottom-3 ${isRtl ? "end-3" : "start-3"} bg-black/60 text-white text-xs px-2 py-1 rounded transition-opacity duration-300 ${
+                  className={`absolute bottom-3 ${isRtl ? "end-3" : "start-3"} bg-black/60 text-white text-xs px-2 py-1 rounded transition-opacity duration-300 pointer-events-none ${
                     isHovered ? "opacity-0" : "opacity-100"
                   }`}
                 >
@@ -191,7 +194,7 @@ function ProjectCard({
           )}
           {project.url && (
             <ExternalLink
-              className={`absolute top-3 ${isRtl ? "start-3" : "end-3"} text-white/70 drop-shadow-md z-10`}
+              className={`absolute top-3 ${isRtl ? "start-3" : "end-3"} text-white/70 drop-shadow-md z-10 pointer-events-none`}
               size={20}
             />
           )}
