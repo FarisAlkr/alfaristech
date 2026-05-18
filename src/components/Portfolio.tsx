@@ -6,13 +6,13 @@ import { Star, ExternalLink, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 
-const projectKeys = ["oncorisk", "nawaqeet", "netobox", "rag", "carnotify"];
+const projectKeys = ["oncorisk", "nawaqeet", "netobox", "engineer", "rag", "lae", "dj", "carnotify"];
 const projectData = [
   {
     tech: ["Python", "FastAPI", "Next.js 14", "XGBoost", "SHAP", "Docker"],
     color: "from-rose-500/20 to-amber-500/20",
     emoji: "🏥",
-    url: "https://frontend-seven-henna-16.vercel.app",
+    url: "https://oncorisk-frontend-production.up.railway.app/",
     image: "/oncorisk-screenshot.gif",
     hasBadge: true,
   },
@@ -33,12 +33,38 @@ const projectData = [
     hasBadge: false,
   },
   {
+    tech: ["Flutter", "Firebase", "Auth", "Firestore"],
+    color: "from-sky-500/20 to-cyan-500/20",
+    emoji: "🏗️",
+    url: "https://engineer-7dd06.web.app/#/auth",
+    image: null,
+    hasBadge: true,
+  },
+  {
     tech: ["Python", "LangChain", "FAISS"],
     color: "from-blue-500/20 to-indigo-500/20",
     emoji: "💹",
     url: null,
     image: null,
     hasBadge: false,
+  },
+  {
+    tech: ["Java", "Multithreading", "Synchronization"],
+    color: "from-amber-500/20 to-yellow-500/20",
+    emoji: "🧮",
+    url: "https://github.com/FarisAlkr/LAE",
+    image: null,
+    hasBadge: true,
+    iframeable: false,
+  },
+  {
+    tech: ["C++", "Data Structures", "RAII"],
+    color: "from-fuchsia-500/20 to-pink-500/20",
+    emoji: "🎧",
+    url: "https://github.com/FarisAlkr/dj-track-session-manager",
+    image: null,
+    hasBadge: true,
+    iframeable: false,
   },
   {
     tech: ["Flutter", "Firebase"],
@@ -67,6 +93,7 @@ function ProjectCard({
     emoji: string;
     url: string | null;
     image: string | null;
+    iframeable?: boolean;
   };
   index: number;
   inView: boolean;
@@ -101,29 +128,31 @@ function ProjectCard({
         >
           {project.url ? (
             <>
-              {/* Live iframe preview */}
-              <div
-                className={`absolute inset-0 transition-opacity duration-300 ${
-                  isHovered ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <iframe
-                  src={project.url}
-                  className="w-full h-full border-0 pointer-events-auto"
-                  style={{
-                    transform: "scale(0.5)",
-                    transformOrigin: "top left",
-                    width: "200%",
-                    height: "200%",
-                  }}
-                  title={project.title}
-                  loading="lazy"
-                />
-              </div>
+              {/* Live iframe preview (skip for sites that block embedding, e.g. GitHub) */}
+              {project.iframeable !== false && (
+                <div
+                  className={`absolute inset-0 transition-opacity duration-300 ${
+                    isHovered ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <iframe
+                    src={project.url}
+                    className="w-full h-full border-0 pointer-events-auto"
+                    style={{
+                      transform: "scale(0.5)",
+                      transformOrigin: "top left",
+                      width: "200%",
+                      height: "200%",
+                    }}
+                    title={project.title}
+                    loading="lazy"
+                  />
+                </div>
+              )}
               {/* Static image fallback */}
               <div
                 className={`absolute inset-0 transition-opacity duration-300 ${
-                  isHovered ? "opacity-0" : "opacity-100"
+                  project.iframeable !== false && isHovered ? "opacity-0" : "opacity-100"
                 }`}
               >
                 {project.image ? (
@@ -139,14 +168,16 @@ function ProjectCard({
                   </div>
                 )}
               </div>
-              {/* Hover hint */}
-              <div
-                className={`absolute bottom-3 ${isRtl ? "end-3" : "start-3"} bg-black/60 text-white text-xs px-2 py-1 rounded transition-opacity duration-300 ${
-                  isHovered ? "opacity-0" : "opacity-100"
-                }`}
-              >
-                {t("hoverPreview")}
-              </div>
+              {/* Hover hint (only when a live iframe preview is actually available) */}
+              {project.iframeable !== false && (
+                <div
+                  className={`absolute bottom-3 ${isRtl ? "end-3" : "start-3"} bg-black/60 text-white text-xs px-2 py-1 rounded transition-opacity duration-300 ${
+                    isHovered ? "opacity-0" : "opacity-100"
+                  }`}
+                >
+                  {t("hoverPreview")}
+                </div>
+              )}
             </>
           ) : project.image ? (
             <Image

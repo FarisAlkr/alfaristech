@@ -1,10 +1,11 @@
 {
   "metadata": {
     "title": "AlfarisTech — AI, Dev & Education Solutions",
-    "description": "Faris Alkrenawi — Software Engineer & AI Specialist. Building production-grade AI systems, mobile apps, and web platforms for healthcare, fintech, and beyond."
+    "description": "Faris Alkrenawi — Software Engineer & AI Specialist. Building production-grade AI systems, mobile apps, and web platforms for healthcare, fintech, IoT, and beyond."
   },
   "nav": {
     "about": "About",
+    "experience": "Experience",
     "services": "Services",
     "portfolio": "Portfolio",
     "testimonials": "Testimonials",
@@ -16,37 +17,64 @@
     "title2": "AI Specialist",
     "intro": "I'm",
     "name": "Faris Alkrenawi",
-    "description": "I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, and beyond.",
+    "description": "I build production-grade AI systems, mobile apps, and web platforms that solve real-world problems in healthcare, fintech, IoT, and beyond. Currently engineering the backend of Netafim's precision-irrigation IoT platform.",
     "cta": "Start a Project",
     "viewWork": "View My Work",
     "stats": {
       "projects": "Projects Delivered",
       "students": "Students Tutored",
-      "languages": "Languages Fluent"
+      "users": "App Users"
     }
   },
   "about": {
     "label": "About Me",
     "title": "Building Intelligent Software That Makes a",
     "titleHighlight": "Difference",
-    "p1": "I'm a Computer Science student at Ben-Gurion University with a background in Mathematics from the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact.",
-    "p2": "Certified in AI by The;Institute (with BGU, NVIDIA & Microsoft), I specialize in LLMs, RAG architectures, and ML models. I also bring over 4 years of experience tutoring 200+ students, which gives me a unique ability to translate complex technology into clear, actionable solutions.",
+    "p1": "I'm a Computer Science student at Ben-Gurion University (B.Sc. expected 2027), having transferred from Mathematics at the Technion — Israel Institute of Technology. My passion lies at the intersection of AI and real-world impact.",
+    "p2": "Currently a Software Engineering Intern at Siraj, contributing to Netafim's Adaptive Drip System — a precision-irrigation IoT platform controlling thousands of valves. Certified in AI by The;Institute (with BGU, NVIDIA & Microsoft), I specialize in LLMs, RAG architectures, and ML models. Six years tutoring 200+ students gives me a unique ability to translate complex technology into clear, actionable solutions.",
     "highlights": {
       "bgu": {
         "title": "BGU Computer Science",
-        "desc": "B.Sc. + Technion Mathematics"
+        "desc": "B.Sc. 2024–2027 · Algorithms 89, Numerical Systems 93"
       },
       "hackathon": {
         "title": "Hackathon Winner",
-        "desc": "OncoRisk EC — Medical AI"
+        "desc": "OncoRisk EC — Soroka Medical Center"
       },
       "nvidia": {
         "title": "NVIDIA & Microsoft",
-        "desc": "AI Certified — The;Institution"
+        "desc": "AI Certified — The;Institute"
       },
       "trilingual": {
         "title": "Trilingual",
         "desc": "Arabic, Hebrew, English"
+      }
+    }
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Where I've Worked",
+    "items": {
+      "siraj": {
+        "company": "Siraj — Netafim ADS",
+        "role": "Software Engineering Intern",
+        "period": "March 2026 — Present",
+        "desc": "Contributing to the backend of Netafim's Adaptive Drip System — a precision-irrigation IoT platform controlling thousands of valves across multi-layer optical networks (L0/L1/L2) connecting field nodes, lateral controllers, and gateways. Building end-to-end integration tests in Java/Spring Boot with Cucumber BDD, validating the plan calculation engine, constraint enforcement, and runtime state consistency across MongoDB and SQL stores.",
+        "tags": ["Java", "Spring Boot", "Cucumber BDD", "MongoDB", "SQL", "IoT"]
+      },
+      "freelance": {
+        "company": "Independent",
+        "role": "Freelance Software Developer",
+        "period": "2024 — Present",
+        "desc": "Building custom software for clients across mobile and web — from idea to App Store deployment. Recent work includes Nawaqeet (1,000+ active users) and a Client Management System for an engineering firm.",
+        "tags": ["Flutter", "Next.js", "FastAPI", "Firebase"]
+      },
+      "tutor": {
+        "company": "Physics & Mathematics Tutor",
+        "role": "Independent",
+        "period": "2020 — Present",
+        "desc": "Tutored 200+ students at university and high school levels in advanced mathematics and physics. Developed the ability to translate complex technical concepts into clear, actionable understanding — a skill that now shapes how I write code, documentation, and client communication.",
+        "tags": ["Mathematics", "Physics", "CS Fundamentals"]
       }
     }
   },
@@ -91,23 +119,41 @@
         "title": "OncoRisk EC — Clinical Decision Support",
         "category": "AI / Healthcare",
         "badge": "Award Winner",
-        "desc": "Production system for Soroka Medical Center predicting endometrial cancer risk. Won hackathon award as sole developer, collaborating with physicians and approved by the medical board for real-world deployment."
+        "desc": "Production system for Soroka Medical Center predicting endometrial cancer risk. XGBoost ensemble with SHAP explainability, FastAPI backend, Next.js 14 frontend, Dockerized deployment. Won hackathon award as sole developer; received initial approval from the hospital's medical board to advance into joint development with Soroka's internal engineering team."
       },
       "nawaqeet": {
         "title": "Nawaqeet — Event Management Platform",
         "category": "Mobile App",
-        "badge": "Published",
-        "desc": "Full-featured event management platform published on iOS & Android, achieving hundreds of downloads in its first hours. Manages transactions, event announcements, and vendor directories."
+        "badge": "1K+ Users",
+        "desc": "Event management platform published on iOS & Android, reaching 1,000+ active users. Manages transaction records (community gift tracking), wedding announcements, and a vendor directory of photographers, venues, and catering."
       },
       "netobox": {
         "title": "NetoBox — Invoice Management System",
         "category": "Mobile App / Fintech",
         "desc": "Smart invoice management with live Israeli tax calculations and automated receipt generation. Streamlines financial workflows for freelancers and businesses."
       },
+      "engineer": {
+        "title": "Client Management System",
+        "category": "Web App / Firebase",
+        "badge": "Live",
+        "desc": "Full client tracking and document-management platform for an engineering firm. Authentication, role-based access, and document storage on Firebase — deployed and in active client use."
+      },
       "rag": {
         "title": "Financial Hybrid RAG System",
         "category": "AI / Fintech",
-        "desc": "Intelligent retrieval system combining semantic and keyword-based search for financial data analysis. Uses vector embeddings and FAISS for rapid, context-aware results."
+        "desc": "Hybrid retrieval pipeline combining dense vector search (FAISS embeddings) with keyword-based retrieval over financial documents, orchestrated with LangChain and LLM-based synthesis for rapid, context-aware results."
+      },
+      "lae": {
+        "title": "Linear Algebra Computation Engine",
+        "category": "Systems / Concurrency",
+        "badge": "Open Source",
+        "desc": "Multi-threaded matrix-operations engine in Java. Implements concurrency primitives, parallelism, synchronization, and explicit locking — built to explore how classical numerical workloads scale under shared-memory contention."
+      },
+      "dj": {
+        "title": "DJ Session Tracker",
+        "category": "Systems / C++",
+        "badge": "Open Source",
+        "desc": "Music-session management system in C++ focusing on manual memory management, RAII patterns, and efficient data structures for real-time session state tracking."
       },
       "carnotify": {
         "title": "CarNotify — Driver Alert System",
@@ -127,7 +173,7 @@
         "project": "Web Development Project"
       },
       "client2": {
-        "quote": "The Nawaqeet app transformed how our community manages events. Hundreds of downloads on launch day speaks for itself. Faris's technical skills and attention to detail are exceptional.",
+        "quote": "The Nawaqeet app transformed how our community manages events. A thousand active users in the first weeks speaks for itself. Faris's technical skills and attention to detail are exceptional.",
         "author": "Community Event Organizer",
         "role": "",
         "project": "Mobile App Project"

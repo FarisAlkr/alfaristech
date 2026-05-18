@@ -23,7 +23,7 @@ export default function Hero() {
   const stats = [
     { value: "10+", label: t("stats.projects") },
     { value: "200+", label: t("stats.students") },
-    { value: "3", label: t("stats.languages") },
+    { value: "1K+", label: t("stats.users") },
   ];
 
   const scrollTo = (id: string) => {
