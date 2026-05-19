@@ -12,7 +12,7 @@ const projectData = [
     tech: ["Python", "FastAPI", "Next.js 14", "XGBoost", "SHAP", "Docker"],
     color: "from-rose-500/20 to-amber-500/20",
     emoji: "🏥",
-    url: "https://oncorisk-frontend-production.up.railway.app/",
+    url: "https://frontend-seven-henna-16.vercel.app/",
     image: "/oncorisk-screenshot.gif",
     hasBadge: true,
   },
@@ -31,6 +31,8 @@ const projectData = [
     url: "https://iram366news.com/",
     image: null,
     hasBadge: true,
+    // iram366news.com sends X-Frame-Options: SAMEORIGIN + CSP frame-ancestors 'self' → cannot embed
+    iframeable: false,
   },
   {
     tech: ["Flutter", "Firebase"],
@@ -47,6 +49,8 @@ const projectData = [
     url: "https://engineer-7dd06.web.app/#/auth",
     image: null,
     hasBadge: true,
+    // Firebase Auth page detects iframe context and refuses to render
+    iframeable: false,
   },
   {
     tech: ["Python", "LangChain", "FAISS"],
